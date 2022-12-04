@@ -11,7 +11,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WebApplication2.Models;
-using Examine.Logging;
 
 namespace WebApplication2
 {
@@ -29,6 +28,7 @@ namespace WebApplication2
         {
             services.AddDbContext<new_databaseContext>(opt => new MySqlConnection(Configuration["ConnectionStrings:Default"]));
             services.AddControllersWithViews();
+            services.AddLogging();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
